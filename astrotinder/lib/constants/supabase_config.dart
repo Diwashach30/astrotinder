@@ -1,3 +1,2 @@
-// Replace YOUR_ANON_KEY with your publishable anon key from Supabase dashboard.
 const String supabaseUrl = 'https://jfwbmtrrhdnxjbqstwtn.supabase.co';
-const String supabaseAnonKey = 'YOUR_ANON_KEY';
+const String supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlkdm93aHB3cHdtbWpscnl1ZXFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA2OTA0MzUsImV4cCI6MjA5NjI2NjQzNX0.0NsTpl9b-vnSpBahuZ61GK2SJRYXAf0OVeIUJR-tB6g';
