@@ -1,0 +1,11 @@
+.DS_Store
+/.idea
+*.iml
+**/build/
+**/.dart_tool/
+**/ios/Pods/
+**/ios/Flutter/Flutter.framework/
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/Generated.xcconfig
+**/ios/Runner/GeneratedPluginRegistrant.*
+**/pubspec.lock
