@@ -42,10 +42,7 @@ class _LoginPageState extends State<LoginPage> {
     final password = _passwordController.text.trim();
 
     try {
-      final response = await SupabaseService.signInWithEmail(email, password);
-      if (response.error != null) {
-        throw response.error!;
-      }
+      await SupabaseService.signInWithEmail(email, password);
 
       if (!mounted) return;
       Navigator.of(context).pushReplacement(

@@ -44,10 +44,7 @@ class _RegisterPageState extends State<RegisterPage> {
     final password = _passwordController.text.trim();
 
     try {
-      final response = await SupabaseService.signUpWithEmail(email, password);
-      if (response.error != null) {
-        throw response.error!;
-      }
+      await SupabaseService.signUpWithEmail(email, password);
 
       if (!mounted) return;
       Navigator.of(context).pushReplacement(
