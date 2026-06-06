@@ -1,5 +1,6 @@
 .DS_Store
 /.idea
+/supabase/.temp/
 *.iml
 **/build/
 **/.dart_tool/

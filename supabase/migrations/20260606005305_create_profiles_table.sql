@@ -10,14 +10,32 @@ create table if not exists profiles (
 alter table profiles enable row level security;
 
 -- Create RLS policies
-create policy "Users can read own profile"
-  on profiles for select
-  using (auth.uid() = id);
+DO $$
+BEGIN
+  CREATE POLICY "Users can read own profile"
+    ON profiles FOR SELECT
+    USING (auth.uid() = id);
+EXCEPTION
+  WHEN duplicate_object THEN NULL;
+END;
+$$;
 
-create policy "Users can update own profile"
-  on profiles for update
-  using (auth.uid() = id);
+DO $$
+BEGIN
+  CREATE POLICY "Users can update own profile"
+    ON profiles FOR UPDATE
+    USING (auth.uid() = id);
+EXCEPTION
+  WHEN duplicate_object THEN NULL;
+END;
+$$;
 
-create policy "Users can insert own profile"
-  on profiles for insert
-  with check (auth.uid() = id);
+DO $$
+BEGIN
+  CREATE POLICY "Users can insert own profile"
+    ON profiles FOR INSERT
+    WITH CHECK (auth.uid() = id);
+EXCEPTION
+  WHEN duplicate_object THEN NULL;
+END;
+$$;
